@@ -1,0 +1,37 @@
+<div class="field">
+  <label class="label">{{ label }}</label>
+  <div class="control">
+    <input
+      type="text"
+      [formControl]="control"
+      class="input"
+      [ngClass]="{ 'is-danger': hasErrors() }"
+    />
+  </div>
+  <div
+    class="help is-danger"
+    *ngIf="control?.touched && control?.errors?.['required']"
+  >
+    Name is required
+  </div>
+  <div
+    class="help is-danger"
+    *ngIf="control?.touched && control?.errors?.['minlength']"
+  >
+    The length should be
+    {{control?.errors?.['minlength'].requiredLength }} letters minimum
+  </div>
+  <div
+    class="help is-danger"
+    *ngIf="control?.touched && control?.errors?.['maxlength']"
+  >
+    The length should be
+    {{control?.errors?.['maxlength'].requiredLength }} letters minimum
+  </div>
+  <div
+    class="help is-danger"
+    *ngIf="control?.touched && control?.errors?.['pattern']"
+  >
+    Invalid Format
+  </div>
+</div>
