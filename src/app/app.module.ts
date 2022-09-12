@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { CollectionsModule } from './collections/collections.module';
 import { HomeComponent } from './home/home.component';
 import { NotFondComponent } from './not-fond/not-fond.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NotFondComponent],
-  imports: [BrowserModule, CollectionsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    CollectionsModule,
+    AppRoutingModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -35,6 +35,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./math-forms/math-forms.module').then((m) => m.MathFormsModule),
   },
+  {
+    path: 'email',
+    loadChildren: () =>
+      import('./email-client/email-client.module').then(
+        (m) => m.EmailClientModule
+      ),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFondComponent },
 ];
